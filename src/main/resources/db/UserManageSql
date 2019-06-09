@@ -1,0 +1,18 @@
+--用户表
+
+drop table if exists poissonn_user;
+create table poissonn_user(
+  id int(11) NOT NULL primary key AUTO_INCREMENT COMMENT 'id'
+);
+
+alter table poissonn_user comment '用户表';
+
+alter table poissonn_user add column username varchar (64) not null comment '用户名';
+alter table poissonn_user add column password varchar (64) not null comment '密码';
+alter table poissonn_user add column name varchar (64)  comment '昵称';
+alter table poissonn_user add column photo varchar (2000)  comment '头像';
+alter table poissonn_user add column phone varchar (16)  comment '手机';
+alter table poissonn_user add column email varchar (64)  comment '邮箱';
+alter table poissonn_user add column role varchar (8)  comment '角色';
+
+

@@ -1,0 +1,17 @@
+--订单表
+
+drop table if exists poissonn_order;
+create table poissonn_order(
+  id int(11) NOT NULL primary key AUTO_INCREMENT COMMENT 'id'
+);
+
+alter table poissonn_order comment '订单表';
+
+alter table poissonn_order add column product_info_id varchar (64) not null comment '商品id';
+alter table poissonn_order add column product_info_name varchar (200) not null comment '商品名称';
+alter table poissonn_order add column user_id varchar (64) not null comment '用户id';
+alter table poissonn_order add column user_name varchar (64) not null comment '用户昵称';
+alter table poissonn_order add column count varchar (64) not null comment '数量';
+alter table poissonn_order add column status varchar (2000) not null comment '状态';
+alter table poissonn_order add column produce_order_num in (11) not null comment '订单号';
+

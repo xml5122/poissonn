@@ -1,0 +1,18 @@
+--商品信息表
+
+drop table if exists poissonn_product;
+create table poissonn_product(
+  id int(11) NOT NULL primary key AUTO_INCREMENT COMMENT 'id'
+);
+
+alter table poissonn_product comment '商品信息表';
+
+alter table poissonn_product add column product_name varchar (200) not null comment '商品名称';
+alter table poissonn_product add column product_type varchar (64) not null comment '商品类型';
+alter table poissonn_product add column product_price int (32) not null comment '商品价格';
+alter table poissonn_product add column product_desc varchar (2000)  comment '商品描述';
+alter table poissonn_product add column product_sale_count int (32) default 0 comment '出售数量';
+alter table poissonn_product add column product_sale_plat int (8) default 0 comment '正在出售平台数量';
+alter table poissonn_product add column product_recommend_price int (32)  comment '建议出售价格';
+alter table poissonn_product add column product_photo varchar (2000)  comment '商品缩略图';
+alter table poissonn_product add column product_photo varchar (2000)  comment '商品图片';

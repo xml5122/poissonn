@@ -1,0 +1,14 @@
+--商品类别表
+
+drop table if exists poissonn_type;
+create table poissonn_type(
+  id int(11) NOT NULL primary key AUTO_INCREMENT COMMENT 'id'
+);
+
+alter table poissonn_type comment '商品类别表';
+
+alter table poissonn_type add column product_type_code int (8) not null comment '商品类型code';
+alter table poissonn_type add column product_type_name varchar (200) not null comment '商品类型名称';
+alter table poissonn_type add column count int (8) not null comment '数量';
+
+
