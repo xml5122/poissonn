@@ -4,7 +4,7 @@ public class ResultInfo {
 
     private String code;
 
-    private String value;
+    private String message;
 
     private Object data;
 
@@ -16,12 +16,12 @@ public class ResultInfo {
         this.code = code;
     }
 
-    public String getValue() {
-        return value;
+    public String getMessage() {
+        return message;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public Object getData() {
