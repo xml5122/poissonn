@@ -1,6 +1,9 @@
 package com.poissonn.dto;
 
-public class PoissonnUserDto {
+public class PoissonnUserDto extends PageVo {
+
+    private static final long serialVersionUID = 4410078567631464760L;
+
     private Integer id;
 
     private String username;
