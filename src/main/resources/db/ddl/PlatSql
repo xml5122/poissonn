@@ -9,4 +9,8 @@ alter table poissonn_plat comment '平台表';
 
 alter table poissonn_plat add column plat_name varchar (16)  comment '平台名称';
 alter table poissonn_plat add column plat_desc varchar (64)  comment '平台描述';
+alter table poissonn_plat add column update_time timestamp not null default current_timestamp on update current_timestamp comment '更新时间';
+alter table poissonn_plat add column update_by varchar (32) not null comment '更新人';
+alter table poissonn_plat add column create_time timestamp not null comment '创建时间';
+alter table poissonn_plat add column create_by varchar (32)  not null comment '创建人';
 

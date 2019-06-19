@@ -15,4 +15,8 @@ alter table poissonn_shop add column shop_password varchar (32)  comment '店铺
 alter table poissonn_shop add column shop_plat_name varchar (32)  comment '所属平台名称';
 alter table poissonn_shop add column shop_plat_id int (11)  comment '所属平台id';
 alter table poissonn_shop add column shop_user_id int (11)  comment '用户id';
+alter table poissonn_shop add column update_time timestamp not null default current_timestamp on update current_timestamp comment '更新时间';
+alter table poissonn_shop add column update_by varchar (32) not null comment '更新人';
+alter table poissonn_shop add column create_time timestamp not null comment '创建时间';
+alter table poissonn_shop add column create_by varchar (32)  not null comment '创建人';
 

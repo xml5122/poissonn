@@ -3,17 +3,15 @@ package com.poissonn.dao;
 import com.poissonn.dto.PoissonnUserDto;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface PoissonnUserMapper {
-    int deleteByPrimaryKey(Integer id);
 
     int insert(PoissonnUserDto record);
 
-    int insertSelective(PoissonnUserDto record);
 
-    PoissonnUserDto selectByPrimaryKey(Integer id);
+    void insertUser(PoissonnUserDto dto);
 
-    int updateByPrimaryKeySelective(PoissonnUserDto record);
-
-    int updateByPrimaryKey(PoissonnUserDto record);
+    List<PoissonnUserDto> queryByParams(String username, String name);
 }

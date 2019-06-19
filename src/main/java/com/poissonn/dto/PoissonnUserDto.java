@@ -2,6 +2,8 @@ package com.poissonn.dto;
 
 import com.poissonn.vo.PageVo;
 
+import java.util.Date;
+
 public class PoissonnUserDto extends PageVo {
 
     private static final long serialVersionUID = 4410078567631464760L;
@@ -12,15 +14,25 @@ public class PoissonnUserDto extends PageVo {
 
     private String password;
 
+    private String phone;
+
     private String name;
-
-    private String shop;
-
-    private String plat;
 
     private String email;
 
-    private String role;
+    private String roleName;
+
+    private Integer roleId;
+
+    private String remark;
+
+    private Date updateTime;
+
+    private String updateBy;
+
+    private Date createTime;
+
+    private String createBy;
 
     public Integer getId() {
         return id;
@@ -46,28 +58,20 @@ public class PoissonnUserDto extends PageVo {
         this.password = password == null ? null : password.trim();
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
-    }
-
-    public String getShop() {
-        return shop;
-    }
-
-    public void setShop(String shop) {
-        this.shop = shop == null ? null : shop.trim();
-    }
-
-    public String getPlat() {
-        return plat;
-    }
-
-    public void setPlat(String plat) {
-        this.plat = plat == null ? null : plat.trim();
     }
 
     public String getEmail() {
@@ -78,11 +82,59 @@ public class PoissonnUserDto extends PageVo {
         this.email = email == null ? null : email.trim();
     }
 
-    public String getRole() {
-        return role;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRole(String role) {
-        this.role = role == null ? null : role.trim();
+    public void setRoleName(String roleName) {
+        this.roleName = roleName == null ? null : roleName.trim();
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public String getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy == null ? null : updateBy.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy == null ? null : createBy.trim();
     }
 }

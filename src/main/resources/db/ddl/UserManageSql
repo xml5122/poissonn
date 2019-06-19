@@ -15,4 +15,9 @@ alter table poissonn_user add column email varchar (64)  comment '邮箱';
 alter table poissonn_user add column role_name varchar (8) not null comment '角色名称';
 alter table poissonn_user add column role_id int(11) not null comment '角色id';
 alter table poissonn_user add column remark varchar (200)  comment '备注';
+alter table poissonn_user add column update_time timestamp not null default current_timestamp on update current_timestamp comment '更新时间';
+alter table poissonn_user add column update_by varchar (32) not null comment '更新人';
+alter table poissonn_user add column create_time timestamp not null comment '创建时间';
+alter table poissonn_user add column create_by varchar (32)  not null comment '创建人';
+
 

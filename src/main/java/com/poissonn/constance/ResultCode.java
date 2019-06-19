@@ -5,8 +5,8 @@ package com.poissonn.constance;
  */
 public enum ResultCode {
 
-    SUCCESS("000000","成功"),
-    FAILURE("999999","失败");
+    SUCCESS("0","成功"),
+    FAILURE("1","失败");
 
     ResultCode(String code, String message) {
         this.code = code;

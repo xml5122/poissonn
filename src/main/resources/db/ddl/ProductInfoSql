@@ -16,3 +16,7 @@ alter table poissonn_product add column product_sale_count int (32) default 0 co
 alter table poissonn_product add column product_recommend_price decimal (18,2)  comment '建议出售价格';
 alter table poissonn_product add column product_photo varchar (2000)  comment '商品缩略图';
 alter table poissonn_product add column product_photo varchar (2000)  comment '商品图片';
+alter table poissonn_product add column update_time timestamp not null default current_timestamp on update current_timestamp comment '更新时间';
+alter table poissonn_product add column update_by varchar (32) not null comment '更新人';
+alter table poissonn_product add column create_time timestamp not null comment '创建时间';
+alter table poissonn_product add column create_by varchar (32)  not null comment '创建人';

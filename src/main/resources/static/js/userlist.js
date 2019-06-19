@@ -4,25 +4,25 @@ layui.use('table', function(){
     //方法级渲染
     table.render({
         elem: '#LAY_table_user'
-        ,url: '/demo/table/user/'
+        ,url: '/user/query'
         ,cols: [[
             {checkbox: true, fixed: true}
             ,{field:'id', title: 'ID', width:80, sort: true, fixed: true}
-            ,{field:'username', title: '用户名', width:80}
-            ,{field:'sex', title: '昵称', width:80, sort: true}
-            ,{field:'city', title: '平台', width:80}
-            ,{field:'sign', title: '店铺'}
-            ,{field:'experience', title: '备注', sort: true, width:80}
+            ,{field:'username', title: '用户名', width:200}
+            ,{field:'name', title: '昵称', width:200}
+            ,{field:'phone', title: '手机号码', width:200}
+            ,{field:'email', title: '邮箱', width:200}
+            ,{field:'role', title: '角色', width:200}
+            ,{field:'remark', title: '备注',width:200}
         ]]
         ,id: 'testReload'
         ,page: true
-        ,height: 750
+        ,height: 600
     });
 
     var $ = layui.$, active = {
         reload: function(){
             var demoReload = $('#demoReload');
-
             //执行重载
             table.reload('testReload', {
                 page: {
@@ -37,6 +37,7 @@ layui.use('table', function(){
         }
     };
 
+    //搜索方法
     $('.demoTable .layui-btn').on('click', function(){
         var type = $(this).data('type');
         active[type] ? active[type].call(this) : '';
