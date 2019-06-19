@@ -102,7 +102,7 @@
   </insert>
 
 
-  <select id="queryByParams" parameterType="java.lang.String" parameterMap="BaseResultMap" >
+  <select id="queryByParams" parameterType="java.lang.String" resultMap="BaseResultMap" >
     select <include refid="cloumn" /> from poissonn_user
     <where>
       <if test=" param1 != null and param1 != '' ">

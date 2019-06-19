@@ -14,7 +14,8 @@ alter table poissonn_order add column user_id int(11)  not null comment '用户i
 alter table poissonn_order add column shop_id int(11) not null comment '店铺id';
 alter table poissonn_order add column count int(8) not null comment '数量';
 alter table poissonn_order add column status varchar (8) not null comment '状态';
-alter table poissonn_order add column varchar(32) not null comment '订单号';
+alter table poissonn_order add column order_num varchar(32) not null comment '订单号';
+alter table poissonn_order add column plat_order_num varchar(32) not null comment '平台订单号';
 alter table poissonn_order add column update_time timestamp not null default current_timestamp on update current_timestamp comment '更新时间';
 alter table poissonn_order add column update_by varchar (32) not null comment '更新人';
 alter table poissonn_order add column create_time timestamp not null comment '创建时间';

@@ -50,11 +50,13 @@ public class UserManageController {
      * @return
      */
     @ApiOperation(value = "根据用户名搜索用户" ,  notes="根据用户名搜索用户")
-    @RequestMapping(value = "/query",method = RequestMethod.GET)
+    @RequestMapping(value = "/query",method = RequestMethod.POST)
     @ResponseBody
     public ResultInfo query(@ApiParam(value = "用户名") @RequestParam(name = "username") String username,
                             @ApiParam(value = "昵称") @RequestParam(name = "name") String name){
         List<PoissonnUserDto> list = userManageService.query(username,name);
+        if (list == null || list.size() <= 0)
+            return ResultUtil.getFailureResult();
         return ResultUtil.getSuccessResult(list,list.size());
     }
 
