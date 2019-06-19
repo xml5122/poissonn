@@ -1,0 +1,13 @@
+--平台表
+
+drop table if exists poissonn_role;
+create table poissonn_role(
+  id int(11) NOT NULL primary key AUTO_INCREMENT COMMENT 'id'
+);
+
+alter table poissonn_role comment '平台表';
+
+alter table poissonn_role add column role_name varchar (16)  comment '角色名称';
+alter table poissonn_role add column role_desc varchar (64)  comment '角色描述';
+alter table poissonn_role add column role_root varchar (64)  comment '角色权限';
+

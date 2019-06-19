@@ -1,0 +1,18 @@
+--店铺表
+
+drop table if exists poissonn_shop;
+create table poissonn_shop(
+  id int(11) NOT NULL primary key AUTO_INCREMENT COMMENT 'id'
+);
+
+alter table poissonn_shop comment '店铺表';
+
+alter table poissonn_shop add column shop_name varchar (64)  comment '店铺名称';
+alter table poissonn_shop add column shop_scope varchar (200)  comment '经营范围';
+alter table poissonn_shop add column shop_url varchar (200)  comment '店铺网址';
+alter table poissonn_shop add column shop_username varchar (64)  comment '店铺账号';
+alter table poissonn_shop add column shop_password varchar (32)  comment '店铺密码';
+alter table poissonn_shop add column shop_plat_name varchar (32)  comment '所属平台名称';
+alter table poissonn_shop add column shop_plat_id int (11)  comment '所属平台id';
+alter table poissonn_shop add column shop_user_id int (11)  comment '用户id';
+

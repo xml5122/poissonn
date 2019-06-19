@@ -1,0 +1,12 @@
+--平台表
+
+drop table if exists poissonn_plat;
+create table poissonn_plat(
+  id int(11) NOT NULL primary key AUTO_INCREMENT COMMENT 'id'
+);
+
+alter table poissonn_plat comment '平台表';
+
+alter table poissonn_plat add column plat_name varchar (16)  comment '平台名称';
+alter table poissonn_plat add column plat_desc varchar (64)  comment '平台描述';
+
