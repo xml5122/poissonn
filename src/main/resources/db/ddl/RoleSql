@@ -10,8 +10,8 @@ alter table poissonn_role comment '平台表';
 alter table poissonn_role add column role_name varchar (16)  comment '角色名称';
 alter table poissonn_role add column role_desc varchar (64)  comment '角色描述';
 alter table poissonn_role add column role_root varchar (64)  comment '角色权限';
-alter table poissonn_role add column update_time timestamp not null default current_timestamp on update current_timestamp comment '更新时间';
-alter table poissonn_role add column update_by varchar (32) not null comment '更新人';
+alter table poissonn_role add column update_time timestamp default current_timestamp on update current_timestamp comment '更新时间';
+alter table poissonn_role add column update_by varchar (8) comment '更新人';
 alter table poissonn_role add column create_time timestamp not null comment '创建时间';
-alter table poissonn_role add column create_by varchar (32)  not null comment '创建人';
+alter table poissonn_role add column create_by varchar (8)  not null comment '创建人';
 

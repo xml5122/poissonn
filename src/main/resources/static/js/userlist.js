@@ -8,7 +8,7 @@ layui.use('table', function(){
         ,url: '/user/query'
         ,method:'post'
         ,contentType:'application/json'
-        ,where:{username:'111',name:"11"}
+        ,where:{username:'xianyu',name:"xianyu"}
         ,parseData: function(res){
             return {
                 "data": res.data //解析数据列表
@@ -67,11 +67,11 @@ layui.use('table', function(){
         $.ajax({
             type: "POST",
             url: "/user/query",
-            data: {username:'111', name:'111'},
+            data: {username:'xianyu', name:'xianyu'},
             dataType: "json",
             success: function(data){
                 console.log(data.code);
-                data = data,data;
+                data = data.data;
             }
         });
 
@@ -88,6 +88,7 @@ layui.use('table', function(){
                 ,{field:'role', title: '角色', width:200}
                 ,{field:'remark', title: '备注',width:200}
             ]]
+            ,data:data
         });
     });
 });

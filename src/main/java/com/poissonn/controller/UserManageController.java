@@ -4,21 +4,17 @@ package com.poissonn.controller;
 import com.poissonn.dto.PoissonnUserDto;
 import com.poissonn.service.UserManageService;
 import com.poissonn.util.ResultInfo;
-import com.poissonn.util.ResultUtil;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
 @RequestMapping(value = "/user")
-@Api(value = "用户相关的api")
-public class UserManageController {
+@Api(tags = "用户相关的api")
+public class UserManageController extends BaseController{
 
 
     @Autowired
@@ -54,10 +50,9 @@ public class UserManageController {
     @ResponseBody
     public ResultInfo query(@ApiParam(value = "用户名") @RequestParam(name = "username") String username,
                             @ApiParam(value = "昵称") @RequestParam(name = "name") String name){
-        List<PoissonnUserDto> list = userManageService.query(username,name);
-        if (list == null || list.size() <= 0)
-            return ResultUtil.getFailureResult();
-        return ResultUtil.getSuccessResult(list,list.size());
+        return super.process(() -> {
+            return userManageService.query(username,name);
+        });
     }
 
 

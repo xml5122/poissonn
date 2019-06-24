@@ -26,5 +26,23 @@ public class ResultUtil {
         return rel;
     }
 
+    public static ResultInfo getFailureResult1(Object obj,String code,String msg,int count){
+        ResultInfo rel = new ResultInfo();
+        rel.setCode(code);
+        rel.setMsg(msg);
+        rel.setCount(count);
+        rel.setData(obj);
+        return rel;
+    }
+
+    public static ResultInfo getFailureResult3(String msg){
+        ResultInfo rel = new ResultInfo();
+        rel.setCode(ResultCode.FAILURE.getCode());
+        rel.setMsg(msg);
+        rel.setCount(0);
+        rel.setData(null);
+        return rel;
+    }
+
 
 }

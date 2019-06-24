@@ -10,8 +10,8 @@ alter table poissonn_type comment '商品类别表';
 alter table poissonn_type add column product_type_code int (8) not null comment '商品类型code';
 alter table poissonn_type add column product_type_name varchar (200) not null comment '商品类型名称';
 alter table poissonn_type add column count int (8) not null comment '数量';
-alter table poissonn_type add column update_time timestamp not null default current_timestamp on update current_timestamp comment '更新时间';
-alter table poissonn_type add column update_by varchar (32) not null comment '更新人';
+alter table poissonn_type add column update_time timestamp default current_timestamp on update current_timestamp comment '更新时间';
+alter table poissonn_type add column update_by varchar (8) comment '更新人';
 alter table poissonn_type add column create_time timestamp not null comment '创建时间';
-alter table poissonn_type add column create_by varchar (32)  not null comment '创建人';
+alter table poissonn_type add column create_by varchar (8)  not null comment '创建人';
 
