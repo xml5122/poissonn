@@ -18,13 +18,7 @@ public class BaseController {
             if (obj instanceof ResultInfo){
                 //处理ResultInfo返回类型的
                 return (ResultInfo) obj;
-            } else if (obj instanceof String){
-                //处理String返回类型的
-                if (String.valueOf(obj).equals(ResultCode.SUCCESS.getMessage())){
-                    return ResultUtil.getSuccessResult(null,0);
-                }
-                return ResultUtil.getFailureResult1(ResultCode.FAILURE.getCode(),String.valueOf(obj),null,0);
-            } else if (obj instanceof ArrayList){
+            }else if (obj instanceof ArrayList){
                 //处理ArrayList返回类型的
                 return ResultUtil.getSuccessResult(obj,((ArrayList) obj).size());
             }

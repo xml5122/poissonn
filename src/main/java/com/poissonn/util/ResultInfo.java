@@ -6,7 +6,7 @@ package com.poissonn.util;
 
 public class ResultInfo {
 
-    private String code;
+    private int code;
 
     private String msg;
 
@@ -30,11 +30,11 @@ public class ResultInfo {
         this.count = count;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 

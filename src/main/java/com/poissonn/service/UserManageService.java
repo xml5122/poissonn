@@ -3,6 +3,7 @@ package com.poissonn.service;
 import com.poissonn.dto.PoissonnUserDto;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserManageService {
 
@@ -19,12 +20,25 @@ public interface UserManageService {
      * @param dto
      * @return
      */
-    Boolean addUser(PoissonnUserDto dto);
+    void addUser(PoissonnUserDto dto);
 
     /**
      * 根据用户名搜索用户
-     * @param username
+     * @param map
      * @return
      */
-    List<PoissonnUserDto> query(String username,String name);
+    List<PoissonnUserDto> query(Map<String,String> map);
+
+    /**
+     * 删除
+     * @param id
+     * @return
+     */
+    void delete(Integer id);
+
+    /**
+     * 给权限下拉框动态赋值
+     * @return
+     */
+    List<Map<String,String>> getRole();
 }

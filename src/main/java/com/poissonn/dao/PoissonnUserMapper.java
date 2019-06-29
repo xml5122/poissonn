@@ -14,4 +14,6 @@ public interface PoissonnUserMapper {
     void insertUser(PoissonnUserDto dto);
 
     List<PoissonnUserDto> queryByParams(String username, String name);
+
+    void deleteUserById(Integer id);
 }

@@ -5,18 +5,18 @@ package com.poissonn.constance;
  */
 public enum ResultCode {
 
-    SUCCESS("0","成功"),
-    FAILURE("1","失败");
+    SUCCESS(0,"成功"),
+    FAILURE(1,"失败");
 
-    ResultCode(String code, String message) {
+    ResultCode(int code, String message) {
         this.code = code;
         this.message = message;
     }
 
-    private String code;
+    private int code;
     private String message;
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 

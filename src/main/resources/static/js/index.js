@@ -4,10 +4,9 @@ layui.use('element', function(){
 
     var tab = {
         tabAdd:function(title,url,id){
-            debugger;
             element.tabAdd('tabTest',{
                 title: title,
-                content: '<iframe id="'+"_"+id+'" tab-id="'+id+'" frameborder="0" src="'+url+'" scrolling="yes" class="x-iframe" width="100%" height="750" class="on"></iframe>',
+                content: '<iframe id="'+"_"+id+'" tab-id="'+id+'" frameborder="0" src="'+url+'" scrolling="no" class="x-iframe" width="100%" height="750" class="on"></iframe>',
                 id: id
             });
             element.render('tab', 'tabTest');
@@ -39,7 +38,6 @@ layui.use('element', function(){
 
 
     element.on('nav(test)', function(data){
-        debugger;
         var url = data.attr('_href');
         if (url == null || "undefined" == url) {
             return;

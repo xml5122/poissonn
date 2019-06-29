@@ -26,7 +26,7 @@ public class ResultUtil {
         return rel;
     }
 
-    public static ResultInfo getFailureResult1(Object obj,String code,String msg,int count){
+    public static ResultInfo getFailureResult1(Object obj,int code,String msg,int count){
         ResultInfo rel = new ResultInfo();
         rel.setCode(code);
         rel.setMsg(msg);

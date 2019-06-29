@@ -18,11 +18,11 @@ layui.use('table', function(){
         }
         ,cols: [[
             {field:'id', title: 'ID', width:'6%', sort: true, fixed: true,align:'center'}
-            ,{field:'username', title: '用户名', width: '10%',align:'center'}
-            ,{field:'name', title: '昵称', width: '10%',align:'center'}
-            ,{field:'phone', title: '手机号码', width:'10%',align:'center'}
-            ,{field:'email', title: '邮箱', width:'10%',align:'center'}
-            ,{field:'roleName', title: '角色', width:'10%',align:'center'}
+            ,{field:'productName', title: '商品名称', width: '10%',align:'center'}
+            ,{field:'productType', title: '商品类型', width: '10%',align:'center'}
+            ,{field:'productPrice', title: '价格', width:'10%',align:'center'}
+            ,{field:'productRecommendPrice', title: '建议出售价', width:'10%',align:'center'}
+            ,{field:'productDesc', title: '商品描述', width:'10%',align:'center'}
             ,{field:'createBy', title: '创建人', width:'10%',align:'center'}
             ,{field:'createTime', title: '创建时间', width:'10%',templet:"<div>{{layui.util.toDateString(d.createTime, 'yyyy-MM-dd')}}</div>",align:'center'}
             ,{field:'remark', title: '备注',width:'12%',align:'center'}
@@ -94,5 +94,66 @@ layui.use('table', function(){
 
 
 
+
+});
+
+
+
+layui.use('tree', function(){
+    debugger;
+    var tree = layui.tree
+        ,layer = layui.layer
+        ,util = layui.util;
+
+
+
+    var data1 = [{
+        title: '江西'
+        ,id: 1
+        ,children: [{
+            title: '南昌'
+            ,id: 1000
+            ,children: [{
+                title: '青山湖区'
+                ,id: 10001
+            },{
+                title: '高新区'
+                ,id: 10002
+            }]
+        },{
+            title: '九江'
+            ,id: 1001
+        },{
+            title: '赣州'
+            ,id: 1002
+        }]
+    },{
+        title: '广西'
+        ,id: 2
+        ,children: [{
+            title: '南宁'
+            ,id: 2000
+        },{
+            title: '桂林'
+            ,id: 2001
+        }]
+    },{
+        title: '陕西'
+        ,id: 3
+        ,children: [{
+            title: '西安'
+            ,id: 3000
+        },{
+            title: '延安'
+            ,id: 3001
+        }]
+    }];
+
+
+    //常规用法
+    tree.render({
+        elem: '#test1' //默认是点击节点可进行收缩
+        ,data: data1
+    });
 
 });

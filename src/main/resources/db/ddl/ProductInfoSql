@@ -9,7 +9,7 @@ alter table poissonn_product comment '商品信息表';
 
 alter table poissonn_product add column product_name varchar (200) not null comment '商品名称';
 alter table poissonn_product add column product_type_code int (8) not null comment '商品类型code';
-alter table poissonn_product add column product_type_name varchar (200) not null comment '商品类型name';
+alter table poissonn_product add column product_type_name varchar (200) not null comment '商品类型';
 alter table poissonn_product add column product_price decimal (18,2) not null comment '商品价格';
 alter table poissonn_product add column product_desc varchar (2000)  comment '商品描述';
 alter table poissonn_product add column product_sale_count int (32) default 0 comment '历史销量';

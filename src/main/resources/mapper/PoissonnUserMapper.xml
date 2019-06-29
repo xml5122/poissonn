@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.poissonn.dao.PoissonnUserMapper" >
+
   <resultMap id="BaseResultMap" type="com.poissonn.dto.PoissonnUserDto" >
-    <result column="id" property="id" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
@@ -17,10 +18,9 @@
     <result column="create_by" property="createBy" jdbcType="VARCHAR" />
   </resultMap>
 
-  <sql id="cloumn" >
-    id, username, password,
-      phone, name, email,
-      role_name, role_id, remark,create_time,create_by
+  <sql id="Base_Column_List" >
+    id, username, password, phone, name, email, role_name, role_id, remark, update_time,
+    update_by, create_time, create_by
   </sql>
 
   <insert id="insert" parameterType="com.poissonn.dto.PoissonnUserDto" >
@@ -35,6 +35,8 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{createBy,jdbcType=VARCHAR})
   </insert>
+
+
   <insert id="insertUser" parameterType="com.poissonn.dto.PoissonnUserDto" >
     insert into poissonn_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -65,9 +67,7 @@
       <if test="createBy != null" >
         create_by,
       </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
+      create_time,
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="username != null" >
@@ -103,7 +103,7 @@
 
 
   <select id="queryByParams" parameterType="java.lang.String" resultMap="BaseResultMap" >
-    select <include refid="cloumn" /> from poissonn_user
+    select <include refid="Base_Column_List" /> from poissonn_user
     <where>
       <if test=" param1 != null and param1 != '' ">
         and username=#{param1}
@@ -113,6 +113,10 @@
       </if>
     </where>
   </select>
+
+  <delete id="deleteUserById" parameterType="java.lang.Integer" >
+    delete from poissonn_user where id = #{param1}
+  </delete>
 
 
 </mapper>

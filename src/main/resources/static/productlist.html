@@ -11,19 +11,17 @@
 <body>
 
 <div class="demoTable">
-    用户名：
+    商品名称：
     <div class="layui-inline">
-        <input class="layui-input" name="username" id="username" autocomplete="off">
+        <input class="layui-input" name="productName" id="productName" autocomplete="off">
     </div>
-    昵称：
-    <div class="layui-inline">
-        <input class="layui-input" name="name" id="name" autocomplete="off">
-    </div>
+    商品类型：
+    <div id="test1" class="demo-tree-more"></div>
     <button class="layui-btn" data-type="reload" id="search">搜索</button>
-    <button class="layui-btn" data-type="reload" id="add">新增用户</button>
+    <button class="layui-btn" data-type="reload" id="add">新增商品</button>
 </div>
 
-<table class="layui-hide" id="user" lay-filter="user"></table>
+<table class="layui-hide" id="user" lay-filter="product"></table>
 
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
@@ -32,7 +30,7 @@
 
 <script src="layui/layui.js" charset="utf-8"></script>
 <script src="js/jquery.js"></script>
-<script src="js/userlist.js" ></script>
+<script src="js/productlist.js" ></script>
 
 </body>
 </html>
